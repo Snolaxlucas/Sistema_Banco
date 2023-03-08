@@ -12,7 +12,7 @@ public class Banco {
         c1.setId(123);
         c1.setNome("Maria das Dores");
         System.out.println("Olá " + c1.getNome() + "titular da conta " + c1.getId());
-        System.out.print("Seu saldo atual é: "); c1.printar();
+        System.out.print("Seu saldo atual é: "); c1.printarpolp();
         System.out.println("Quanto deseja depositar?");
         double deposito = sc.nextDouble();
         c1.depositar(deposito);
@@ -23,8 +23,13 @@ public class Banco {
         }else {
             c1.sacar(saque);
         }
-        System.out.println("Seu saldo atual é: "); c1.printar();
-
+        System.out.println("Seu saldo atual é: "); c1.printarpolp();
+        System.out.println("Quanto deseja depositar na conta corrente?");
+        double corrente = sc.nextDouble();
+        c1.setSaldoCorren(corrente);
+        c1.tranfer();
+        System.out.println("Saldo conta polpança é: ");c1.printarpolp();
+        System.out.println("Saldo conta corrente é: ");c1.printarcorren();
         sc.close();
 
     }
